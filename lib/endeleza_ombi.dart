@@ -254,7 +254,7 @@ class _EndelezaState extends State<Endeleza> {
                           Navigator.of(context).pop();
                         },
                         child: Icon(Icons.arrow_back,color: Colors.white,)),
-                    Text('Taarifa Muhimu',style: TextStyle(
+                    Text('Endeleza Ombi',style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,

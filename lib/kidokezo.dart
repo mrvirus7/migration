@@ -60,7 +60,7 @@ class _KidokezoState extends State<Kidokezo> {
                         Column(
                           children: [
                             TextButton(onPressed: (){
-                              Navigator.pushNamed(context, 'home');
+                              Navigator.pushNamed(context, 'homepage');
                             },
                                 child: Text("Home")),
                             Container(
@@ -108,12 +108,9 @@ class _KidokezoState extends State<Kidokezo> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: ExpandableText("Tafadhali hifadhi Namba ya Utambulisho (Reference ID) sehemu salama, kwani itahitajika pindi Mwombaji atakapohitaji KUENDELEA na Ombi lake hapo baadae."
-                                "Aidha, Namba hiyo itahitajika pia endapo kutatokea tatizo la kukatika kwa mawasiliano wakati Mwombaji anajaza fomu, au ikiwa anahitaji kukatisha ujazaji wa fomu yake kwa sasa, na kuendelea kutoka pale alipoishia hapo baadaye.",style: TextStyle(fontSize: 11.0),
-                              collapseText: 'show less',
-                              expandText: 'Show More',
-                              maxLines: 1,
-                              linkColor: Colors.red,
+                            child: Text("Tafadhali hifadhi Namba ya Utambulisho (Reference ID) sehemu salama, kwani itahitajika pindi Mwombaji atakapohitaji KUENDELEA na Ombi lake hapo baadae."
+                                "Aidha, Namba hiyo itahitajika pia endapo kutatokea tatizo la kukatika kwa mawasiliano wakati Mwombaji anajaza fomu, au ikiwa anahitaji kukatisha ujazaji wa fomu yake kwa sasa, na kuendelea kutoka pale alipoishia hapo baadaye.",style: TextStyle(fontSize: 12.0),
+
                             ),
                           ),
                           Padding(
@@ -149,7 +146,7 @@ class _KidokezoState extends State<Kidokezo> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 10,),
                     Padding(
                       padding: const EdgeInsets.only(left: 160),
                       child: Row(
@@ -158,12 +155,12 @@ class _KidokezoState extends State<Kidokezo> {
                           TextButton(
                             style: TextButton.styleFrom(
                                 primary: Colors.white,
-                                backgroundColor: Colors.lightBlueAccent,
+                                backgroundColor: Colors.teal,
                                 textStyle: TextStyle(fontSize: 14)
 
                             ),
                             onPressed: (){
-                              Navigator.pushNamed(context, 'flutter_step');
+                              Navigator.pushNamed(context, 'stepper_page');
 
                             },
                             child: Text('Endelea na Ombi >>',),),

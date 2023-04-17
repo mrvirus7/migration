@@ -3,6 +3,7 @@ import 'package:migration/FormPage.dart';
 import 'package:migration/Home.dart';
 import 'package:migration/about.dart';
 import 'package:migration/add_screen.dart';
+import 'package:migration/contact.dart';
 import 'package:migration/muongozi.dart';
 
 class FirstPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   int index_color =0;
-  List Screen = [Home(),About(),Home(),Muongozo()];
+  List Screen = [Home(),Muongozo(),Contact(),About()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +67,7 @@ floatingActionButton: FloatingActionButton(
                   });
                 },
                 child: Icon(
-                  Icons.add_alert_sharp,
+                  Icons.contact_phone_outlined,
                   size: 30,
                   color: index_color == 2 ? Color(0xff368983): Colors.grey,
                 ),
@@ -78,7 +79,7 @@ floatingActionButton: FloatingActionButton(
                   });
                 },
                 child: Icon(
-                  Icons.accessibility_sharp,
+                  Icons.contact_support_outlined,
                   size: 30,
                   color: index_color == 3 ? Color(0xff368983): Colors.grey,
                 ),

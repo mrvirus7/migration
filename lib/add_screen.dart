@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({Key? key}) : super(key: key);
@@ -43,6 +44,7 @@ class _AddScreenState extends State<AddScreen> {
            background_container(context),
             Positioned(
               top: 120,
+
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -53,53 +55,96 @@ class _AddScreenState extends State<AddScreen> {
                   child: Form(
                     key: _formKey,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(top: 2),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
 
-                          SizedBox(height:20),
+                          Row(
+
+                            children: [
+                              Column(
+                                children: [
+                                  TextButton(onPressed: (){
+                                    Navigator.pushNamed(context, 'homepage');
+                                  },
+                                      child: Text("Home")),
+                                  Container(
+                                    margin: EdgeInsets.only(top: 1),
+                                    height: 2,
+                                    width: 35,
+                                    color: Colors.orange,
+                                  )
+                                ],
+                              ),
+
+                              Padding(
+
+                                padding: const EdgeInsets.only(right: 0),
+
+                                child: Column(
+
+                                  children: [
+                                    TextButton(onPressed: (){
+                                      Navigator.pushNamed(context, 'muongozo');
+                                    },
+                                        child: Text("Muongozo wa ombi la Passport")),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 1),
+                                      height: 2,
+                                      width: 195,
+                                      color: Colors.orange,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 2,),
 
                           Container(
                             height: 70,
-                            width: 250,
+                            width: 300,
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 155),
+                                  padding: const EdgeInsets.only(top: 5,right: 165),
                                   child: Text("Aina Ya Ombi*",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.bold),),
                                 ),
 
-                                DropdownButton(
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: DropdownButton(
 
 
-                                  value: dropdownvalue,
+                                    value: dropdownvalue,
 
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+
+                                    ),
+
+                                    iconSize: 24,
+                                    elevation: 16,
+                                    isExpanded: true,
+                                    items:items.map((String items) {
+                                      return DropdownMenuItem(
+
+                                          value: items,
+                                          child: Text(items)
+                                      );
+
+                                    }
+
+                                    ).toList(),
+                                    onChanged: (String? newValue){
+                                      setState(() {
+                                        dropdownvalue = newValue!;
+                                      });
+                                    },
 
                                   ),
-
-                                  iconSize: 24,
-                                  elevation: 16,
-                                  isExpanded: true,
-                                  items:items.map((String items) {
-                                    return DropdownMenuItem(
-
-                                        value: items,
-                                        child: Text(items)
-                                    );
-
-                                  }
-
-                                  ).toList(),
-                                  onChanged: (String? newValue){
-                                    setState(() {
-                                      dropdownvalue = newValue!;
-                                    });
-                                  },
-
                                 ),
                               ],
                             ),
@@ -109,15 +154,22 @@ class _AddScreenState extends State<AddScreen> {
 
 
                           SizedBox(height:2),
-                          IntlPhoneField(
-                            decoration: InputDecoration(
-                              labelText: 'Phone Number',
+                          Container(
+                            height: 90,
+                            width: 300,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: IntlPhoneField(
+                                decoration: InputDecoration(
+                                  labelText: 'Phone Number',
 
+                                ),
+                                initialCountryCode: 'TZ',
+                                onChanged: (phone) {
+                                  print(phone.completeNumber);
+                                },
+                              ),
                             ),
-                            initialCountryCode: 'TZ',
-                            onChanged: (phone) {
-                              print(phone.completeNumber);
-                            },
                           ),
                           // TextFormField(
                           //   controller: phone,
@@ -134,47 +186,50 @@ class _AddScreenState extends State<AddScreen> {
                           //   },
                           // ),
 
-                          SizedBox(height:10),
+                          SizedBox(height:5),
 
                           Container(
                             height: 70,
-                            width: 250,
+                            width: 300,
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 100),
+                                  padding: const EdgeInsets.only(right: 120),
                                   child: Text("Eneo Alipo Muombaji*",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.bold),),
                                 ),
 
-                                DropdownButton(
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: DropdownButton(
 
 
-                                  value: dropdownvalues,
+                                    value: dropdownvalues,
 
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+
+                                    ),
+
+                                    iconSize: 24,
+                                    elevation: 16,
+                                    isExpanded: true,
+                                    items:eneo.map((String eneo) {
+                                      return DropdownMenuItem(
+
+                                          value: eneo,
+                                          child: Text(eneo)
+                                      );
+
+                                    }
+
+                                    ).toList(),
+                                    onChanged: (String? newValue){
+                                      setState(() {
+                                        dropdownvalues = newValue!;
+                                      });
+                                    },
 
                                   ),
-
-                                  iconSize: 24,
-                                  elevation: 16,
-                                  isExpanded: true,
-                                  items:eneo.map((String eneo) {
-                                    return DropdownMenuItem(
-
-                                        value: eneo,
-                                        child: Text(eneo)
-                                    );
-
-                                  }
-
-                                  ).toList(),
-                                  onChanged: (String? newValue){
-                                    setState(() {
-                                      dropdownvalues = newValue!;
-                                    });
-                                  },
-
                                 ),
                               ],
                             ),
@@ -184,70 +239,78 @@ class _AddScreenState extends State<AddScreen> {
                           SizedBox(height:10),
                           Container(
                             height: 90,
-                            width: 250,
+                            width: 300,
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 50),
+                                  padding: const EdgeInsets.only(left: 20),
                                   child: Text("Mahali/Ofisi ambapo Ombi litashughulikiwa*",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.bold),),
                                 ),
 
-                                DropdownButton(
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: DropdownButton(
 
 
-                                  value: dropdown,
+                                    value: dropdown,
 
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+
+                                    ),
+
+                                    iconSize: 24,
+                                    elevation: 16,
+                                    isExpanded: true,
+                                    items:nchi.map((String eneo) {
+                                      return DropdownMenuItem(
+
+                                          value: eneo,
+                                          child: Text(eneo)
+                                      );
+
+                                    }
+
+                                    ).toList(),
+                                    onChanged: (String? newValue){
+                                      setState(() {
+                                        dropdown = newValue!;
+                                      });
+                                    },
 
                                   ),
-
-                                  iconSize: 24,
-                                  elevation: 16,
-                                  isExpanded: true,
-                                  items:nchi.map((String eneo) {
-                                    return DropdownMenuItem(
-
-                                        value: eneo,
-                                        child: Text(eneo)
-                                    );
-
-                                  }
-
-                                  ).toList(),
-                                  onChanged: (String? newValue){
-                                    setState(() {
-                                      dropdown = newValue!;
-                                    });
-                                  },
-
                                 ),
                               ],
                             ),
                           ),
 
-                          SizedBox(height: 20,),
-                          Row(
+                          SizedBox(height: 10,),
+                          Column(
                             children: [
 
-                              TextButton(
-                                style: TextButton.styleFrom(
-                                    primary: Colors.white,
-                                    backgroundColor: Colors.blue,
-                                    textStyle: TextStyle(fontSize: 18)
-
-                                ),
-                                onPressed: (){
-                                  Navigator.pushNamed(context, 'kidokezo');
-
+                              AnimatedButton(
+                                text: "Anza Ombi >>>",
+                                color: Colors.teal,
+                                pressEvent: (){
+                                  AwesomeDialog(
+                                      context: context,
+                                      dialogType: DialogType.success,
+                                      animType: AnimType.topSlide,
+                                      showCloseIcon: true,
+                                      title: "Success",
+                                      desc: "Hakikisha unahifadhi kumbukumbu Number Yako",
+                                      btnOkOnPress: (){
+                                        Navigator.pushNamed(context, 'kidokezo');
+                                      },
+                                      btnOkColor: Colors.green
+                                  ).show();
                                 },
-                                child: Text('Anza Ombi >>',),),
-                              SizedBox(width: 20,),
 
 
+                              ),
                             ],
                           ),
-                          SizedBox(height: 100,),
+
 
 
 

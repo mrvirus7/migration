@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20.0,bottom: 0),
-              child: Text("v1.0.0 ",style: TextStyle(fontSize: 15,color: Colors.white),),
+              child: Text("v1.2.1 ",style: TextStyle(fontSize: 15,color: Colors.white),),
             ),
           ],
         ),

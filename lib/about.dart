@@ -1,5 +1,6 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'config/Palette.dart';
 
@@ -22,7 +23,7 @@ class _AboutState extends State<About> {
             right: 0,
             left: 0,
             child: Container(
-              height: 220,
+              height: 170,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/uha.jpg"),
@@ -38,8 +39,8 @@ class _AboutState extends State<About> {
                       padding: const EdgeInsets.only(top: 30.0,right: 14),
                       child: Image.asset(
                         'assets/images/umoja.png',
-                        height: 100.0,
-                        width: 100.0,
+                        height: 50.0,
+                        width: 50.0,
                       ),
                     ),
                     Padding(
@@ -57,9 +58,9 @@ class _AboutState extends State<About> {
 
           ),
           Positioned(
-              top: 170,
+              top: 110,
               child: Container(
-                height: 425,
+                height: 500,
                 width: MediaQuery.of(context).size.width-40,
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
@@ -79,60 +80,66 @@ class _AboutState extends State<About> {
 
 
                       Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.only(left: 10,right: 5,top: 2),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 1,left: 20),
-                              child: Text("About Immigration Department",style: TextStyle(fontSize: 15.0,color: Colors.teal),
+                              padding: const EdgeInsets.only(top: 1,left: 40),
+                              child: Text("About Immigration Department",style: TextStyle(fontSize: 14.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 1.0),
+                              child: Center(
+                                  child:
+                                  Lottie.asset('assets/animation/sendfile.json')),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("Who we are",style: TextStyle(fontSize: 11.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("The Immigration Services Department is established under Section 4(1) of the Immigration Act of 1995 Chapter 54 as amended by Act No.8 of 2015.  It gives the Department the authority to control and facilitate immigration issues in the United Republic of Tanzania. The Department is one of the security organs under Ministry of Home Affairs.",style: TextStyle(fontSize: 11.0),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(left: 5,right: 5,top: 2),
                               child: Text("Vision",style: TextStyle(fontSize: 11.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("To become an efficient and effective Institution, which provides high quality Immigration services that meet both national and international standards.",style: TextStyle(fontSize: 11.0),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("Mission",style: TextStyle(fontSize: 11.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("To facilitate and control movements of persons through implementation of relevant Laws and Regulations in order to safeguard national security and economic interests.",style: TextStyle(fontSize: 11.0),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("Motto",style: TextStyle(fontSize: 11.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 2,left: 5,right: 5),
                               child: Text("Migration security and developmen",style: TextStyle(fontSize: 11.0),
 
                               ),
