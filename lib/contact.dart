@@ -1,16 +1,16 @@
-import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'config/Palette.dart';
 
-class Muongozo extends StatefulWidget {
-  const Muongozo({Key? key}) : super(key: key);
+class Contact extends StatefulWidget {
+  const Contact({Key? key}) : super(key: key);
 
   @override
-  State<Muongozo> createState() => _MuongozoState();
+  State<Contact> createState() => _ContactState();
 }
 
-class _MuongozoState extends State<Muongozo> {
+class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +38,8 @@ class _MuongozoState extends State<Muongozo> {
                       padding: const EdgeInsets.only(top: 30.0,right: 14),
                       child: Image.asset(
                         'assets/images/umoja.png',
-                        height: 45.0,
-                        width: 45.0,
+                        height: 50.0,
+                        width: 50.0,
                       ),
                     ),
                     Padding(
@@ -57,9 +57,9 @@ class _MuongozoState extends State<Muongozo> {
 
           ),
           Positioned(
-              top: 100,
+              top: 110,
               child: Container(
-                height: 520,
+                height: 500,
                 width: MediaQuery.of(context).size.width-40,
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
@@ -84,49 +84,41 @@ class _MuongozoState extends State<Muongozo> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Text("VIELELEZO VINAVYOHITAJIKA WAKATI WA UJAZAJI WA FOMU YA MAOMBI YA PASIPOTI",style: TextStyle(fontSize: 12.0,color: Colors.teal),
-
-                              ),
-                            ),
-
-                            Padding(
-                              padding: const EdgeInsets.only(top: 4,left: 5,right: 5),
-                              child: Text("1. Cheti cha Kuzaliwa Mwombaji\n"
-                                  "2. Cheti/Kiapo cha Kuzaliwa Mzazi wa Mwombaji\n"
-                                  "3. Kitambulisho cha Taifa \n 4. Picha ya Mwombaji ya hivi karibuni yenye kivuli cha rangi ya buluu isiyokoza (Light blue Background)\n"
-                                "5. Ada ya Fomu Tsh 20,000 \n 6. Ushahidi wa Safari au Ushahidi wa Shughuli anayofanya Mwombaji.",style: TextStyle(fontSize: 11.0),
+                              padding: const EdgeInsets.only(top: 1,left: 20),
+                              child: Text("Immigration Contact Information",style: TextStyle(fontSize: 15.0,color: Colors.teal),
 
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 5,left: 5,right: 5),
-                              child: Text("JINSI YA KUJAZA FOMU YA MAOMBI YA PASIPOTI",style: TextStyle(fontSize: 11.0,color: Colors.teal),
-
-                              ),
+                              padding: const EdgeInsets.only(top: 1.0),
+                              child: Center(
+                                  child:
+                                  Lottie.asset('assets/animation/sendfile.json')),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 4,left: 5,right: 5),
-                              child: Text("1. Bofya Anza kujaza fomu, kwa Ombi Jipya\n"
-                                  "2. Bofya ENDELEA ili kuendelea na Ombi ambalo halikufikia mwisho"
-                                  "Utahitajika Kujaza Namba ya Utambulisho (Rfeference ID) wa Ombi lako na Namba ya Ombi (Application Number) husika\n"
-                  "3. Jaza Taarifa zako sahihi kwa ukamilifu\n"
-                 "4. Hifadhi Namba yako ya Utambulisho (Application ID) kwa matumizi ya baadaye.\n"
-          "5. Jaza Taarifa za Pasipoti ya zamani (ikiwa uliwahi kuwa na pasipoti)\n"
-        "6. Jaza Taarifa za Wadhamini na Watu ambao ungependa wapewe taarifa endapo utatakewa na tatizo lolote\n"
-    "7. Ambatanisha Vielelezo vyote vinavyohitajika (kwa kuzingatia maelekezo)\n"
-    "8. Hakiki Taarifa zako zote na kisha bofya kukubaliana nazo ikiwa ziko sahihi\n"
-    "9. Lipia fomu yako baada ya kupatiwa Namba ya Kumbukumbu ya Malipo (Control Number)",style: TextStyle(fontSize: 11.0),
 
-                              ),
-                            ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text("Kitufe cha Kufuatilia Hali (Status) ya Ombi kinakuwezesha kufuatilia Ombi lako limefikia hatua gani",style: TextStyle(fontSize: 11.0,color: Colors.teal),
+                              child: Text("DODOMA HEADQUARTERS\n"
+                                  "Tanzania Immigration Department\n"
+                                  "1181, Dodoma, Tanzania\n"
+                                     " +255 262-323542\n"
+                                  "+255 262323532\n"
+                                  "info@immigration.go.tz",style: TextStyle(fontSize: 11.0),
 
                               ),
                             ),
 
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("ZANZIBAR OFFICE\n"
+                                  "Immigration Head Office Zanzibar\n"
+                                  "1354, Zanzibar - Tanzania\n"
+                                  "+255 242 233 678\n"
+                                  "+255 242 233 676\n"
+                                  "proznz@immigration.go.tz",style: TextStyle(fontSize: 11.0),
+
+                              ),
+                            ),
 
 
                           ],
@@ -176,3 +168,5 @@ class _MuongozoState extends State<Muongozo> {
     );
   }
 }
+
+

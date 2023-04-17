@@ -1,5 +1,6 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'config/Palette.dart';
 
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
             right: 0,
             left: 0,
             child: Container(
-              height: 220,
+              height: 130,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/uha.jpg"),
@@ -38,8 +39,8 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.only(top: 30.0,right: 14),
                       child: Image.asset(
                         'assets/images/umoja.png',
-                        height: 100.0,
-                        width: 100.0,
+                        height: 70.0,
+                        width: 70.0,
                       ),
                     ),
                     Padding(
@@ -57,13 +58,13 @@ class _HomeState extends State<Home> {
 
           ),
           Positioned(
-              top: 180,
+              top: 135,
               child: Container(
-                height: 410,
-                width: MediaQuery.of(context).size.width-40,
+                height: 480,
+                width: MediaQuery.of(context).size.width-35,
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.white.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
@@ -73,202 +74,187 @@ class _HomeState extends State<Home> {
                       ),
                     ]
                 ),
-                child: SingleChildScrollView(
+
                   child: Column(
                     children: [
 
-                      Row(
-
-                        children: [
-                          Column(
-                            children: [
-                              TextButton(onPressed: (){
-                                Navigator.pushNamed(context, 'home');
-                              },
-                                  child: Text("Home")),
-                              Container(
-                                margin: EdgeInsets.only(top: 3),
-                                height: 2,
-                                width: 35,
-                                color: Colors.orange,
-                              )
-                            ],
-                          ),
-
-                          Padding(
-
-                            padding: const EdgeInsets.only(right: 10),
-
-                            child: Column(
-
-                              children: [
-                                TextButton(onPressed: (){},
-                                    child: Text("Muongozo wa ombi la Passport")),
-                                Container(
-                                  margin: EdgeInsets.only(top: 3),
-                                  height: 2,
-                                  width: 195,
-                                  color: Colors.orange,
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10,),
 
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                           
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ExpandableText("Mfumo wa Passport",style: TextStyle(fontSize: 12.0,color: Colors.teal),
-                                collapseText: 'show less',
-                                expandText: 'Show More',
+                              padding: const EdgeInsets.only(top: 1.0),
+                              child: Center(
+                                  child:
+                                  Lottie.asset('assets/animation/pc.json')),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10,left: 80),
+                              child: Text("Chagua Huduma ",style: TextStyle(color: Colors.teal,fontSize: 16),),
+                            ),
+
+             GridView.count(
+              childAspectRatio: 0.60,
+
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              children: [
+                // for(int i =1; i< 9; i++)
+
+                Container(
+                  padding:EdgeInsets.only(top: 10) ,
+                  margin: EdgeInsets.symmetric(vertical: 2,horizontal: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, "endeleza");
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Image.asset(
+                            "assets/images/pass1.jpg",
+                            height: 80,
+                            width: 70,
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left:15.0),
+                              child: Text(
+                                "Endeleza ",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF4C53A5),
+                                ),
                               ),
                             ),
+
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding:EdgeInsets.only(top: 10) ,
+                  margin: EdgeInsets.symmetric(vertical: 2,horizontal: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, "add_screen");
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Image.asset(
+                            "assets/images/pass2.jpg",
+                            height: 80,
+                            width: 70,
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ExpandableText("Hii ni huduma mpya inayomuwezesha muombaji kujaza Fomu ya Maombi ya Pasipoti kwa njia ya Kielektroniki akiwa mahali popote. Baada ya kujaza fomu hiyo, atatakiwa kuichapisha (Print) na kuiwasilisha pamoja na vielelezo vingine katika Ofisi ya Uhamiaji iliyo karibu naye kwa ajili ya kushughulikiwa maombi yake ya Pasipoti.",style: TextStyle(fontSize: 11.0),
-                                collapseText: 'show less',
-                                expandText: 'Show More',
-                                maxLines: 1,
-                                linkColor: Colors.red,
+                              padding: const EdgeInsets.only(left:8.0),
+                              child: Text(
+                                "Ombi Jipya",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF4C53A5),
+                                ),
                               ),
                             ),
+
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding:EdgeInsets.only(top: 10) ,
+                  margin: EdgeInsets.symmetric(vertical: 2,horizontal: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, "ufuatiliaji");
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Image.asset(
+                            "assets/images/pass1.jpg",
+                            height: 80,
+                            width: 70,
+                          ),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 20,left: 80),
-                              child: Text("Chagua Huduma >>>"),
+                              padding: const EdgeInsets.only(left:15.0),
+                              child: Text(
+                                "Ufuatiliaji",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF4C53A5),
+                                ),
+                              ),
                             ),
-                            SizedBox(height: 10,),
-                            // Padding(
-                            //   padding: const EdgeInsets.only(top: 8.0,left: 20),
-                            //   child: ElevatedButton(onPressed: (){
-                            //
-                            //   }, child: Text("Ombi Jipya")),
-                            // )
-                            Container(
 
-                                 child: Row(
-                                   children: [
-                                     InkWell(
-                                       onTap: (){
-                                         Navigator.pushNamed(context, 'add_screen');
-                                       },
-                                       child: Container(
-                                             height: 140,
-                                             width: 90,
-                                             decoration: BoxDecoration(
-                                               color: Colors.white,
-                                               borderRadius: BorderRadius.circular(5.0),
-                                               boxShadow: [
-                                                 new BoxShadow(
-                                                   color: Color(0xff368983).withOpacity(0.3),
-                                                   offset: new Offset(-10, 0.0),
-                                                   blurRadius: 20.0,
-                                                   spreadRadius: 4.0
-                                                 )
-                                               ]
-
-                                             ),
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(top: 2,left:10),
-                                                    child: Text("Ombi Jipya",style: TextStyle(color: Colors.teal,fontSize: 12),),
-                                                  ),
-                                                  SizedBox(height: 4,),
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(top:2,left: 2,right: 2),
-                                                    child: Text("Kwa Mwombaji anayeanza kujaza fomu ya maombi ya Pasipoti kwa njia ya kielektroniki kwa mara ya kwanza (hata kama alishawahi kuwa na pasipoti)",style: TextStyle(color: Colors.black,fontSize: 9),),
-                                                  ),
-                                                ],
-                                              ),
-
-                                           ),
-                                     ),
-                                     SizedBox(width: 5,),
-                                     InkWell(
-                                       onTap: (){
-                                         Navigator.pushNamed(context, 'endeleza');
-                                       },
-                                       child: Container(
-                                         height: 140,
-                                         width: 90,
-                                         decoration: BoxDecoration(
-                                           color: Colors.teal,
-                                           borderRadius: BorderRadius.circular(5.0),
-
-
-                                         ),
-                                         child: Column(
-                                           crossAxisAlignment: CrossAxisAlignment.start,
-                                           children: [
-                                             Padding(
-                                               padding: const EdgeInsets.only(top: 2,left:5),
-                                               child: Text("Endeleza Ombi",style: TextStyle(color: Colors.white,fontSize: 12),),
-                                             ),
-                                             SizedBox(height: 4,),
-                                             Padding(
-                                               padding: const EdgeInsets.only(top:2,left: 2,right: 2),
-                                               child: Text("Kwa Mwombaji ambaye alishajaza fomu ya maombi ya pasipoti kwa njia ya kielktroniki na kufikia hatua ya kupatiwa Namba ya Ombi.)",style: TextStyle(color: Colors.black,fontSize: 9),),
-                                             ),
-                                           ],
-                                         ),
-                                       ),
-                                     ),
-                                     SizedBox(width: 5,),
-                                     InkWell(
-                                       onTap: (){
-                                         Navigator.pushNamed(context, 'ufuatiliaji');
-                                       },
-                                       child: Container(
-
-                                         height: 140,
-                                         width: 90,
-                                         decoration: BoxDecoration(
-                                             color: Colors.white,
-                                             borderRadius: BorderRadius.circular(5.0),
-                                             boxShadow: [
-                                               new BoxShadow(
-                                                   color: Color(0xff368983).withOpacity(0.3),
-                                                   offset: new Offset(10, 0.0),
-                                                   blurRadius: 20.0,
-                                                   spreadRadius: 4.0
-                                               )
-                                             ]
-
-                                         ),
-                                         child: Column(
-                                           crossAxisAlignment: CrossAxisAlignment.start,
-                                           children: [
-                                             Padding(
-                                               padding: const EdgeInsets.only(top: 2,left:10),
-                                               child: Text("Ufuatiliaji wa Ombi",style: TextStyle(color: Colors.teal,fontSize: 12),),
-                                             ),
-                                             SizedBox(height: 4,),
-                                             Padding(
-                                               padding: const EdgeInsets.only(top:2,left: 2,right: 2),
-                                               child: Text("Kwa Mwombaji ambaye alishajaza fomu ya maombi ya pasipoti kwa njia ya kielktroniki na kufikia hatua ya kupatiwa Namba ya Ombi.)",style: TextStyle(color: Colors.black,fontSize: 9),),
-                                             ),
-                                           ],
-                                         ),
-
-                                       ),
-                                     ),
-
-                                   ],
-                                 ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
 
 
 
 
 
 
-                            ),
+              ],
+
+            ),
+
 
 
 
@@ -281,7 +267,7 @@ class _HomeState extends State<Home> {
 
                     ],
                   ),
-                ),
+
               )
           ),
           // Positioned(
